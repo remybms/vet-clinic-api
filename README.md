@@ -33,7 +33,7 @@ Pour les traitements, deux choses sont possibles :
 
 ## 2. Le fonctionnement de l'API
 
-Pour lancer l'API, il suffit d'exécuter le programme avec 
+Pour lancer l'API, il suffit d'exécuter la commande
 ```bash
 go run main.go
 ```
