@@ -20,7 +20,7 @@ Pour les visites, trois possibilités s'offrent à vous :
 
  - **/visits** permet d'ajouter une nouvelle visite (attention bien préciser le numéro du chat conerné par le rendez-vous)
  - **/visits/(id)** permet d'afficher l'intégralité des visites pour un chat donné, ses traitements donnés lors du rendez-vous sont inclus dessus
- - **/visits/(id)/(filtre)** permet d'afficher les visites d'un chat trié dans l'ordre alphabétique selon trois critères : la date, le vétérinaire vu ou la raison du rendez-vous
+ - **/visits/(id)/(filtre)** permet d'afficher les visites d'un chat trié dans l'ordre alphabétique selon trois critères : la date avec *date*, le vétérinaire vu avec *veterinary* ou la raison du rendez-vous avec *reason*
 
 
 ### C. Les traitements
