@@ -43,7 +43,7 @@ func (config *TreatmentConfigurator) treatmentHandler(w http.ResponseWriter, r *
 func (config *TreatmentConfigurator) addTreatmentHandler(w http.ResponseWriter, r *http.Request) {
 	req := &models.Treatment{}
 	if err := render.Bind(r, req); err != nil {
-		render.JSON(w, r, map[string]string{"error": "Invalid request payload"})
+		render.JSON(w, r, map[string]string{"error": err.Error()})
 		return
 	}
 	addTreatment := &dbmodel.Treatment{Medication: req.Medication, VisitId: req.VisitId}

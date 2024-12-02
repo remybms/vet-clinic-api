@@ -56,7 +56,7 @@ func (config *CatConfigurator) catByIdHandler(w http.ResponseWriter, r *http.Req
 func (config *CatConfigurator) addCatHandler(w http.ResponseWriter, r *http.Request) {
 	req := &models.Cat{}
 	if err := render.Bind(r, req); err != nil {
-		render.JSON(w, r, map[string]string{"error": "Invalid request payload"})
+		render.JSON(w, r, map[string]string{"error": err.Error()})
 		return
 	}
 	addCat := &dbmodel.Cat{Name: req.Name, Age: req.Age, CatBreed: req.CatBreed, Weight: req.Weight}
@@ -68,7 +68,7 @@ func (config *CatConfigurator) editCatHandler(w http.ResponseWriter, r *http.Req
 	req := &models.Cat{}
 	catId := chi.URLParam(r, "id")
 	if err := render.Bind(r, req); err != nil {
-		render.JSON(w, r, map[string]string{"error": "Invalid request payload"})
+		render.JSON(w, r, map[string]string{"error": err.Error()})
 		return
 	}
 	updatedCat := &dbmodel.Cat{Name: req.Name, Age: req.Age, CatBreed: req.CatBreed, Weight: req.Weight}

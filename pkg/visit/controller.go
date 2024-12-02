@@ -48,7 +48,7 @@ func (config *VisitConfigurator) visitHistoryHandler(w http.ResponseWriter, r *h
 func (config *VisitConfigurator) addVisitHandler(w http.ResponseWriter, r *http.Request) {
 	req := &models.Visit{}
 	if err := render.Bind(r, req); err != nil {
-		render.JSON(w, r, map[string]string{"error": "Invalid request payload"})
+		render.JSON(w, r, map[string]string{"error": err.Error()})
 		return
 	}
 	addVisit := &dbmodel.Visit{Date: req.Date, Reason: req.Reason, Veterinary: req.Veterinary, CatId: req.CatId}
