@@ -1,6 +1,7 @@
 package models
 
 import (
+	"errors"
 	"net/http"
 )
 
@@ -14,6 +15,8 @@ type Visit struct {
 }
 
 func (v *Visit) Bind(r *http.Request) error {
-
+	if v.CatId < 0 {
+		return errors.New("id_cat must be a positive integer")
+	}
 	return nil
 }
