@@ -31,7 +31,7 @@ Pour les traitements, deux choses sont possibles :
  - **/treatments/(id)** permet d'afficher tous les traitements distribués pour une visite donnée
 
 
-## 2. Le fonctionnement de l'API
+## 2. Lancer l'API
 
 Pour lancer l'API, il suffit d'exécuter la commande
 ```bash
